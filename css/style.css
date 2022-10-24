@@ -1,0 +1,237 @@
+@import url('reset.css');
+
+
+[class*="__container"] {
+	max-width: 1230px;
+	margin: 0 auto;
+}
+
+
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+	position: relative;
+	background: url("../img/kosmos.jpg") 0 0/cover no-repeat;
+}
+
+.galaxy__sun::after {
+	content: "";
+	background: url("../img/sun.png") 0 0/cover no-repeat;
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	left: 10px;
+	top: 200px;
+
+}
+
+.galaxy__sun:hover.galaxy__sun::after {
+	transform: scale(2);
+	transition: all 2s ease 0s;
+
+}
+
+.galaxy__mercury::after {
+	content: "";
+	background: url(../img/mercury.png)0 0/cover no-repeat;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	left: 600px;
+	top: 0px;
+	transform: translateX(-300%);
+	opacity: 0;
+	visibility: hidden;
+}
+
+.page__galaxy:hover .galaxy__mercury::after {
+	opacity: 1;
+	visibility: visible;
+	animation: galaxy-mercury 10s linear forwards infinite;
+}
+
+@keyframes galaxy-mercury {
+	0% {
+		transform: translateX(-300%);
+	}
+
+	25% {
+		transform: translateX(-100%);
+	}
+
+	75% {
+		transform: translateX(300%);
+	}
+
+	100% {
+		transform: translateX(500%);
+	}
+
+}
+
+.galaxy__venus::after {
+	content: "";
+	width: 300px;
+	height: 300px;
+	background: url("../img/venus.png") 0 0/cover no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(700%, 0%) scale(0.5);
+	visibility: hidden;
+	opacity: 0;
+	animation-name: venus;
+	animation: venus 15s linear 8s infinite;
+}
+
+.page__galaxy:hover .galaxy__venus::after {
+	visibility: visible;
+	opacity: 1;
+
+}
+
+@keyframes venus {
+	0% {
+		transform: translate(700%, 0%) scale(0.5);
+	}
+
+	50% {
+		transform: translate(300%, 0%) scale(1);
+	}
+
+	100% {
+		transform: translate(-500%, 0%) scale(0.5);
+	}
+}
+
+.galaxy__earth::after {
+	content: "";
+	width: 300px;
+	height: 300px;
+	background: url("../img/earth.png") 0 0/cover no-repeat;
+	position: absolute;
+	top: 600px;
+	left: 20px;
+	transform: translate(-200%, 0%) scale(2);
+	visibility: hidden;
+	opacity: 0;
+}
+
+.page__galaxy:hover .galaxy__earth::after {
+	visibility: visible;
+	opacity: 1;
+	animation-name: earth;
+	animation: earth 10s ease-in-out infinite;
+}
+
+@keyframes earth {
+	0% {
+		transform: translate(-200%, 0%) scale(1);
+	}
+
+	50% {
+		transform: translate(300%, 0%) scale(2);
+	}
+
+	100% {
+		transform: translate(700%, 0%) scale(1);
+	}
+}
+
+.galaxy__mars::after {
+	content: "";
+	width: 300px;
+	height: 300px;
+	background: url("../img/mars.png")0 0/cover no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(-200%, 0%) scale(0.2);
+	visibility: hidden;
+	opacity: 0;
+}
+
+.page__galaxy:hover .galaxy__mars::after {
+	visibility: visible;
+	opacity: 1;
+	animation-name: mars;
+	animation: mars 8s linear 4s infinite;
+}
+
+@keyframes mars {
+	0% {
+		transform: translate(-200%, 0%)scale(0.2);
+	}
+
+	100% {
+		transform: translate(300%, 400%) scale(2);
+	}
+}
+
+.galaxy__jupiter::after {
+	content: "";
+	width: 300px;
+	height: 300px;
+	background: url("../img/jupiter.png") 0 0/cover no-repeat;
+	position: absolute;
+	top: 300px;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	transform: translate(700%, 0%) scale(2);
+	animation-name: jupiter;
+	animation: jupiter 15s linear 10s infinite;
+}
+
+.page__galaxy:hover .galaxy__jupiter::after {
+	visibility: visible;
+	opacity: 1;
+}
+
+@keyframes jupiter {
+	0% {
+		transform: translate(700%, 0%) scale(2);
+	}
+
+	50% {
+		transform: translate(500%, 0%) scale(0.5);
+	}
+
+	100% {
+		transform: translate(-500%, 0%) scale(1);
+	}
+}
+
+.galaxy__saturn::after {
+	content: "";
+	background: url("../img/saturn.png") 0 0/cover no-repeat;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(-200%, -200%) rotateZ(80deg);
+	opacity: 0;
+	visibility: hidden;
+	animation-name: saturn;
+	animation: saturn 18s ease-in-out 2s infinite;
+}
+
+.page__galaxy:hover .galaxy__saturn::after {
+	visibility: visible;
+	opacity: 1;
+}
+
+@keyframes saturn {
+	0% {
+		transform: translate(0%, -200%) rotateZ(80deg);
+	}
+
+	50% {
+		transform: translate(200%, 100%) rotateZ(120deg);
+	}
+
+	100% {
+		transform: translate(-500%, 100%) rotateZ(120deg);
+	}
+}
